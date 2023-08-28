@@ -1,0 +1,77 @@
+<h1>EMPLOYEES</h1>
+  <button class="btn btn-secondary left" (click)="openScanner()">Show Detail</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of employeeData">
+        <td scope="row">{{data.id}}</td>
+        <td>{{data.employee_name}}</td>
+        <td>{{data.employee_age}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+
+  <!-- DETAIL Modal -->
+  <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="#DetailModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">DETAIL EMPLOYEE</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody *ngFor="let detail of detailEmployeeData">
+              <tr >
+                <td scope="col">Full Name</td>
+                <td>{{detail.employee_name}}</td>
+              </tr>
+              <tr >
+                <td scope="col">Age</td>
+                <td>{{detail.employee_age}}</td>
+              </tr>
+              <tr >
+                <td scope="col">Salary</td>
+                <td>{{detail.employee_salary}}</td>
+              </tr>
+              <tr >
+                <td scope="col">Image</td>
+                <td>{{detail.profile_image}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scanner Modal -->
+  <div class="modal fade" id="scanner" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Show Detail</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <ngx-scanner-qrcode #action="scanner" [config]="config" (event)="onEvent($event, action)"></ngx-scanner-qrcode>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
