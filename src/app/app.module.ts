@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListEmployeeComponent } from './pages/employee/list-employee/list-employee.component';
 import { CheckInEmployeeComponent } from './pages/employee/check-in-employee/check-in-employee.component';
 import { DetailEmployeeComponent } from './pages/employee/detail-employee/detail-employee.component';
+import { ChatGptComponent } from "./pages/chat-gpt/chat-gpt.component";
 import { HeaderComponent } from './pages/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScanQrComponent } from './pages/scan-qr/scan-qr.component';
@@ -17,6 +18,7 @@ import { NgxScannerQrcodeModule } from "ngx-scanner-qrcode";
     ListEmployeeComponent,
     CheckInEmployeeComponent,
     DetailEmployeeComponent,
+    ChatGptComponent,
     HeaderComponent,
     ScanQrComponent
   ],

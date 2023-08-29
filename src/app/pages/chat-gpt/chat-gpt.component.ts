@@ -17,8 +17,6 @@ export class ChatGptComponent {
 
   inputChange(event: any){
     this.userInput = event.target.value;
-    console.log(this.userInput);
-    
   }
 
   sendMessage() {
