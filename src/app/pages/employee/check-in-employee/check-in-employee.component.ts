@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import {} from 'googlemaps';
+// import {} from 'googlemaps';
 declare var $: any;
 
 @Component({
@@ -10,7 +10,7 @@ declare var $: any;
 export class CheckInEmployeeComponent implements OnInit{
   //Map
   @ViewChild('map') mapElement: ElementRef | undefined;
-  map!: google.maps.Map;
+  // map!: google.maps.Map;
   latitude!: number;
   longitude!: number;
 
@@ -39,7 +39,7 @@ export class CheckInEmployeeComponent implements OnInit{
         (position) => {
           this.latitude = position.coords.latitude;
           this.longitude = position.coords.longitude;
-          this.initMap();
+          // this.initMap();
         },
         (error) => {
           console.error('Error getting location', error);
@@ -50,27 +50,27 @@ export class CheckInEmployeeComponent implements OnInit{
     }
   }
 
-  initMap() {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    // this.in = `${hours}:${minutes}`;
+  // initMap() {
+  //   const now = new Date();
+  //   const hours = now.getHours().toString().padStart(2, '0');
+  //   const minutes = now.getMinutes().toString().padStart(2, '0');
+  //   // this.in = `${hours}:${minutes}`;
 
-    const mapProperties = {
-      center: new google.maps.LatLng(this.latitude, this.longitude),
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+  //   const mapProperties = {
+  //     center: new google.maps.LatLng(this.latitude, this.longitude),
+  //     zoom: 15,
+  //     mapTypeId: google.maps.MapTypeId.ROADMAP
+  //   };
 
-    if (this.mapElement) {
-      this.map = new google.maps.Map(this.mapElement.nativeElement,    mapProperties);
-      new google.maps.Marker({
-        position: { lat: this.latitude, lng: this.longitude },
-        map: this.map,
-        title: 'Your Location'
-      });
-    }
-  }
+  //   if (this.mapElement) {
+  //     this.map = new google.maps.Map(this.mapElement.nativeElement,    mapProperties);
+  //     new google.maps.Marker({
+  //       position: { lat: this.latitude, lng: this.longitude },
+  //       map: this.map,
+  //       title: 'Your Location'
+  //     });
+  //   }
+  // }
 
   // Function Take Picture
 
