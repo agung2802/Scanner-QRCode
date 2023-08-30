@@ -9,7 +9,7 @@ import create from "chatgpt-api";
 export class ChatbotService {
 
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
-  private apiKey = 'API Key'; // Ganti dengan API key Anda
+  private apiKey = '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'; // Ganti dengan API key Anda
 
   constructor(private http: HttpClient) {}
 
