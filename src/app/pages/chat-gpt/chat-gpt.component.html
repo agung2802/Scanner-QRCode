@@ -26,8 +26,8 @@
       </div>
       <div class="position-fixed" style="bottom: 10px; width: 22%; right: 30px; background-color: white;">
         <div class="input-group" style="padding: 10px;">
-          <input (change)="inputChange($event)" id="input" type="text" class="form-control" placeholder="Type your message..." />
-          <button class="btn btn-primary">Send</button>
+          <input (change)="inputChange($event)" id="input" (keyup.enter)="sendMessage()" type="text" class="form-control" placeholder="Type your message..." />
+          <button class="btn btn-primary" (click)="sendMessage()">Send</button>
         </div>
       </div>
     </div>
